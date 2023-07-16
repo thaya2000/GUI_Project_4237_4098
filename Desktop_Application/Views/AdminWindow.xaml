@@ -43,7 +43,10 @@
                 </Border>
 
                 <Border Grid.Row="1">
-                    <StackPanel Margin="0 25">
+                    <StackPanel Margin="0 5">
+                        <Border HorizontalAlignment="Right" Margin="0 0 5 0">
+                            <Button x:Name ="signoutadminbutton" Content="Sign out" Style="{DynamicResource logoutButton}" Click="signoutadminbutton_Click"/>
+                        </Border>
                         <StackPanel>
                             <TextBlock Text="ADMIN PAGE" Style="{StaticResource titleText}" FontSize="40" />
                             <TextBlock Text="Create Account" Style="{StaticResource titleText}" FontSize="25" />

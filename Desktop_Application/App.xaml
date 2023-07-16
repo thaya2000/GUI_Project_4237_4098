@@ -176,6 +176,30 @@
             </Style.Triggers>
         </Style>
 
+
+        <Style x:Key="logoutButton" TargetType="Button" BasedOn="{StaticResource confirmDeleteButton}">
+            <Setter Property="Background" Value="#ff3a2a"/>
+            <Setter Property="Foreground" Value="#FDFEFE"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="1" BorderBrush="#ff3a2a"
+                                CornerRadius="5" HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Background="{TemplateBinding Background}"
+                                Padding="0"
+                                Width="70"
+                                Height="30"
+                                >
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
         <Style x:Key="cancelDeleteButton" TargetType="Button">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Background" Value="#3cd639"/>

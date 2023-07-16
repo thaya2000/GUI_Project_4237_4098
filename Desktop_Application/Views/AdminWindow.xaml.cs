@@ -156,6 +156,11 @@ namespace Desktop_Application.Views
             this.Close();
         }
 
-
+        private void signoutadminbutton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
     }
 }

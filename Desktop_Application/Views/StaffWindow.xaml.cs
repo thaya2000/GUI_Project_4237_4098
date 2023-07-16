@@ -56,5 +56,12 @@ namespace Desktop_Application.Views
         {
             WindowState = WindowState.Maximized;
         }
+
+        private void signoutstaffbutton_Click(object sender, RoutedEventArgs e)
+        {
+            var loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
     }
 }
