@@ -1,0 +1,133 @@
+﻿<Window x:Class="Desktop_Application.Views.EditStudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon ="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:Desktop_Application.Views" xmlns:local1="clr-namespace:Desktop_Application.ViewModels"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True"  Background ="Transparent"
+        Title="Edit student Window" Height="750" Width="300" >
+    <Window.DataContext>
+        <local1:StaffWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <Border Background="#ffffff" CornerRadius="10"  MouseDown="Border_MouseDown" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="720"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="#2D4356" CornerRadius="10 10 0 0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition  Width="30"/>
+                            <ColumnDefinition  Width="30"/>
+                            <ColumnDefinition  Width="5"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnMinimize" Grid.Column="1"  Click="btnMinimize_Click" Style="{StaticResource minimizeButton}">
+                            <Icon:PackIconMaterial Kind ="WindowMinimize"/>
+                        </Button>
+                        <Button x:Name="btnClose" Grid.Column="2" Click="btnClose_Click" Style="{StaticResource closeButton}">
+                            <Icon:PackIconMaterial Kind ="WindowClose"/>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1">
+                    <StackPanel>
+
+                        <StackPanel Margin="0 10">
+                            <TextBlock Text="Edit Student" Style="{StaticResource titleText}"  FontSize="25" />
+                        </StackPanel>
+
+
+                        <StackPanel>
+                            <TextBlock Text="First Name" Style="{StaticResource textblockcaption}" />
+                            <Border BorderThickness="1" BorderBrush="#acb0af" Margin="15 2 15 0" CornerRadius="5">
+                                <Grid Margin="7 5">
+                                    <TextBox Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource textBox}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+
+                        <StackPanel>
+                            <TextBlock Text="Last Name" Style="{StaticResource textblockcaption}" />
+                            <Border BorderThickness="1" BorderBrush="#acb0af" Margin="15 2 15 0" CornerRadius="5"  >
+                                <Grid Margin="7 5">
+                                    <TextBox Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Style="{StaticResource textBox}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="NIC no" Style="{StaticResource textblockcaption}" />
+                            <Border BorderThickness="1" BorderBrush="#acb0af" Margin="15 2 15 0" CornerRadius="5"  >
+                                <Grid Margin="7 5">
+                                    <TextBox Text="{Binding NicNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Style="{StaticResource textBox}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="Maths Grade" Style="{StaticResource textblockcaption}" />
+                            <Border BorderThickness="1" BorderBrush="#acb0af" Margin="15 2 15 0" CornerRadius="5"  >
+                                <Grid Margin="7 5">
+                                    <TextBox  Text="{Binding MathsGrade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource textBox}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="Science Grade" Style="{StaticResource textblockcaption}" />
+                            <Border BorderThickness="1" BorderBrush="#acb0af" Margin="15 2 15 0" CornerRadius="5"  >
+                                <Grid Margin="7 5">
+                                    <TextBox Text="{Binding ScienceGrade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource textBox}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="History Grade" Style="{StaticResource textblockcaption}" />
+                            <Border BorderThickness="1" BorderBrush="#acb0af" Margin="15 2 15 0" CornerRadius="5"  >
+                                <Grid Margin="7 5">
+                                    <TextBox Text="{Binding HistoryGrade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource textBox}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="ICT Grade" Style="{StaticResource textblockcaption}" />
+                            <Border BorderThickness="1" BorderBrush="#acb0af" Margin="15 2 15 0" CornerRadius="5"  >
+                                <Grid Margin="7 5">
+                                    <TextBox  Text="{Binding IctGrade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource textBox}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="Commerce Grade" Style="{StaticResource textblockcaption}" />
+                            <Border BorderThickness="1" BorderBrush="#acb0af" Margin="15 2 15 0" CornerRadius="5"  >
+                                <Grid Margin="7 5">
+                                    <TextBox  Text="{Binding CommerceGrade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource textBox}"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <Button Content="Save" 
+                            Style="{StaticResource mainButton}" Click="SaveButton_Click" />
+                    </StackPanel>
+
+                </Border>
+
+
+            </Grid>
+        
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿Desktop_Application
+
+
+winexe
+C#
+.cs
+D:\Semester 3\Project - Practice\Desktop_Application\Desktop_Application\obj\Debug\net7.0-windows\
+Desktop_Application
+none
+false
+TRACE;DEBUG;NET;NET7_0;NETCOREAPP
+D:\Semester 3\Project - Practice\Desktop_Application\Desktop_Application\App.xaml
+7-708098180
+
+19194631818
+250-376168119
+CustomControl\BindablePasswordBox.xaml;Views\AddStudentWindow.xaml;Views\AdminWindow.xaml;Views\DeleteStudentWindow.xaml;Views\EditStudentWindow.xaml;Views\LoginWindow.xaml;Views\StaffWindow.xaml;
+
+False
+

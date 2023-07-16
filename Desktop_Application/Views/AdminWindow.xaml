@@ -1,0 +1,93 @@
+﻿<Window x:Class="Desktop_Application.Views.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop_Application.Views"
+        xmlns:Icon ="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:customcontrol="clr-namespace:Desktop_Application.CustomControl" 
+        xmlns:local1="clr-namespace:Desktop_Application.ViewModels"
+        mc:Ignorable="d"
+        
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True"  Background ="Transparent"
+        Title="Admin Window" Height="450" Width="350" >
+
+    <Window.DataContext>
+        <local1:LoginWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <Border Background="#ffffff" CornerRadius="25"  MouseDown="Border_MouseDown" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="420"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="#2D4356" CornerRadius="20 20 0 0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition  Width="30"/>
+                            <ColumnDefinition  Width="30"/>
+                            <ColumnDefinition  Width="5"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnMinimize" Grid.Column="1"  Click="btnMinimize_Click" Style="{StaticResource minimizeButton}">
+                            <Icon:PackIconMaterial Kind ="WindowMinimize"/>
+                        </Button>
+                        <Button x:Name="btnClose" Grid.Column="2" Click="btnClose_Click" Style="{StaticResource closeButton}">
+                            <Icon:PackIconMaterial Kind ="WindowClose"/>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1">
+                    <StackPanel Margin="0 25">
+                        <StackPanel>
+                            <TextBlock Text="ADMIN PAGE" Style="{StaticResource titleText}" FontSize="40" />
+                            <TextBlock Text="Create Account" Style="{StaticResource titleText}" FontSize="25" />
+                        </StackPanel>
+                        <Border BorderThickness="1" BorderBrush="#acb0af" Margin="40 30 40 5" CornerRadius="5">
+                            <Grid Margin="7 9">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Icon:PackIconMaterial Kind="Account" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#B0BEC5" Margin="5" />
+                                <TextBlock x:Name="textUsername"  MouseDown="textUsername_MouseDown"   Grid.Column="1" Text="Username" VerticalAlignment="Center"
+                                    Style="{StaticResource textHint}"/>
+                                <TextBox x:Name="txtUsername" Text="{Binding UserName}" TextChanged="txtUsername_TextChanged" Style="{StaticResource textBox}"/>
+                            </Grid>
+                        </Border>
+
+                        <Border BorderThickness="1" BorderBrush="#acb0af" Margin="40 15 40 20" CornerRadius="5"  >
+                            <Grid Margin="7 9">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Icon:PackIconMaterial Kind="Lock" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#B0BEC5" Margin="5" />
+                                <TextBlock x:Name="textPassword"  MouseDown="textPassword_MouseDown"  Grid.Column="1" Text="Password" VerticalAlignment="Center"
+                                Style="{StaticResource textHint}"/>
+                                <customcontrol:BindablePasswordBox x:Name="txtPassword"  Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                          PasswordChanged="txtPassword_PasswordChanged"      Style="{StaticResource textBox}"  />
+                            </Grid>
+                        </Border>
+                        <TextBlock x:Name="tb_user_exist"  Text="Username already exists" HorizontalAlignment="Center" Visibility="Collapsed" Foreground="Red"/>
+                        <TextBlock x:Name="tb_user_created"  Text="Account successfully created" HorizontalAlignment="Center" Visibility="Collapsed" Foreground="LightGreen"/>
+
+
+                        <Button x:Name="create_account"  Content="create Account" Click="create_account_Click" 
+                            Style="{StaticResource mainButton}" />
+                    </StackPanel>
+
+                </Border>
+                
+                
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
